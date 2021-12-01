@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Input, Button } from 'antd';
 
 export const ToDoForm = (props) => {
-  const { onSubmit } = props;
+  const { onSubmit, onRemoveCompleted } = props;
   const [form] = Form.useForm();
   const onFinish = (values) => {
     if (onSubmit) {
@@ -18,6 +18,9 @@ export const ToDoForm = (props) => {
       </Form.Item>
       <Form.Item className="todo-form-actions">
         <Button htmlType="submit" type="primary">Add</Button>
+      </Form.Item>
+      <Form.Item>
+        <Button htmlType="submit" type="primary" onClick={onRemoveCompleted}>Remove Completed</Button>
       </Form.Item>
     </Form>
   )

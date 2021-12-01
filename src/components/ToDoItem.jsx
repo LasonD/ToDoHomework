@@ -20,9 +20,9 @@ export const ToDoItem = (props) => {
   return (
     <li className="todo-item" key={item.id}>
       <Checkbox 
-        checked={item.checked}
+        checked={item.completed}
         onChange={onCheckItem}
-      >{item.name}</Checkbox>
+      >{item.content}</Checkbox>
       <Button onClick={onRemoveItem}>Remove</Button>
     </li>
   )
