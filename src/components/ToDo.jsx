@@ -3,6 +3,8 @@ import { Card, Divider } from 'antd';
 import { ToDoItem } from './ToDoItem';
 import { ToDoForm } from './ToDoForm';
 import axios from 'axios';
+import moment from 'moment';
+import { counter } from '@fortawesome/fontawesome-svg-core';
 
 const token = "3f1b2e94bd0c9e8b754aeefd1200d09583d51951";
 const config = {
@@ -55,8 +57,9 @@ export const ToDo = () => {
     }
   }
 
-  const onSubmit = async (content) => {
-    const todo = { content };
+  const onSubmit = async (item) => {
+    let titleWithCreationDate = item.title + " | " + moment(Date.now()).format("DD.MM.yyyy - HH:mm");
+    const todo = { content: titleWithCreationDate, description: item.description };
     const { data } = await axios.post("https://api.todoist.com/rest/v1/tasks", todo, config);
     
     setTodos([...todos, { ...todo, id: data.id }]);
@@ -77,7 +80,7 @@ export const ToDo = () => {
   }
 
   return (
-    <Card title={'My todos'} className="todo-card">
+    <Card id="todoCard" title={'My todos'} extra={"Count: " + todos.length} className="todo-card">
       <ToDoForm onSubmit={onSubmit} onRemoveCompleted={onRemoveCompleted} />
       <Divider />
       { renderTodoItems(todos) }

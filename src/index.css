@@ -10,6 +10,8 @@
 .todo-card {
   min-width: 300px;
   margin: 0 auto;
+  padding: 2em;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .todo-list {
@@ -19,9 +21,13 @@
 .todo-item {
   list-style: none;
   margin-bottom: 5px;
-  display: flex;
+  display: block;
   justify-content: space-between;
   align-items: center;
+}
+
+.completed {
+  text-decoration: line-through;
 }
 
 .todo-form {
@@ -35,6 +41,36 @@
 .todo-form-input {
   flex: 1!important;
 }
+
 .todo-form-actions {
-  flex: 0!important;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-form-action {
+  width: fit-content;
+}
+
+.actions-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-item-content {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remove-btn {
+  width: 6vh;
+  height: 6vh;
+}
+
+.time-of-creation {
+  font-style: italic;
+  font-weight: 400;
+  float: right;
+  margin-top: 1em;
+  opacity: 0.5;
 }
