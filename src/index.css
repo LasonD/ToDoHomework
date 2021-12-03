@@ -60,7 +60,12 @@
   justify-content: space-between;
 }
 
+h3 {
+  margin-left: 1em;
+}
+
 .todo-item-content {
+  margin-left: 1em;
   margin-top: 2em;
   display: flex;
   justify-content: space-between;
@@ -77,5 +82,6 @@
   font-weight: 400;
   float: right;
   margin-top: 1em;
+  margin-right: 1em;
   opacity: 0.5;
 }
