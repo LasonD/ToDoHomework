@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ToDoHomework/static/css/main.72f39b01.chunk.css",
-    "main.js": "/ToDoHomework/static/js/main.0d68a01e.chunk.js",
-    "main.js.map": "/ToDoHomework/static/js/main.0d68a01e.chunk.js.map",
+    "main.css": "/ToDoHomework/static/css/main.6cf73a4a.chunk.css",
+    "main.js": "/ToDoHomework/static/js/main.c6d3ea89.chunk.js",
+    "main.js.map": "/ToDoHomework/static/js/main.c6d3ea89.chunk.js.map",
     "runtime-main.js": "/ToDoHomework/static/js/runtime-main.fbbbcb0a.js",
     "runtime-main.js.map": "/ToDoHomework/static/js/runtime-main.fbbbcb0a.js.map",
     "static/css/2.0c14234b.chunk.css": "/ToDoHomework/static/css/2.0c14234b.chunk.css",
@@ -10,14 +10,14 @@
     "static/js/2.28bce005.chunk.js.map": "/ToDoHomework/static/js/2.28bce005.chunk.js.map",
     "index.html": "/ToDoHomework/index.html",
     "static/css/2.0c14234b.chunk.css.map": "/ToDoHomework/static/css/2.0c14234b.chunk.css.map",
-    "static/css/main.72f39b01.chunk.css.map": "/ToDoHomework/static/css/main.72f39b01.chunk.css.map",
+    "static/css/main.6cf73a4a.chunk.css.map": "/ToDoHomework/static/css/main.6cf73a4a.chunk.css.map",
     "static/js/2.28bce005.chunk.js.LICENSE.txt": "/ToDoHomework/static/js/2.28bce005.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fbbbcb0a.js",
     "static/css/2.0c14234b.chunk.css",
     "static/js/2.28bce005.chunk.js",
-    "static/css/main.72f39b01.chunk.css",
-    "static/js/main.0d68a01e.chunk.js"
+    "static/css/main.6cf73a4a.chunk.css",
+    "static/js/main.c6d3ea89.chunk.js"
   ]
 }
