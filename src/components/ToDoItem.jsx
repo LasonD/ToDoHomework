@@ -30,9 +30,9 @@ export const ToDoItem = (props) => {
     let title, time;
 
     if (match && match.length > 0) {
-      const mathcedTimePart = match[match.length - 1];
-      time = mathcedTimePart.substr(3);
-      title = raw.replace(mathcedTimePart, '');
+      const matchedTimePart = match[match.length - 1];
+      time = matchedTimePart.substr(3);
+      title = raw.replace(matchedTimePart, '');
     } else {
       time = "N/A";
       title = raw;
@@ -43,16 +43,18 @@ export const ToDoItem = (props) => {
 
   return (
     <li className={"todo-item" + item.completed === true ? " completed" : ""} key={item.id}>
-      <h3 className={item.completed === true ? "completed" : ""}>{detatchTitleAndTime().title}</h3>
-      <div className={"todo-item-content"}>
-        <Checkbox className={item.completed ? "completed" : ""}
-          checked={item.completed}
-          onChange={onCheckItem}
-        >{item.description}</Checkbox>
-        <Button className="remove-btn" type="danger" onClick={onRemoveItem}><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></Button>
+      <div className={item.completed === true ? "container-completed" : ""}>
+        <h3 className={item.completed === true ? "completed" : ""}>{detatchTitleAndTime().title}</h3>
+        <div className={"todo-item-content"}>
+          <Checkbox className={item.completed ? "completed" : ""}
+            checked={item.completed}
+            onChange={onCheckItem}
+          >{item.description}</Checkbox>
+          <Button className="remove-btn" type="danger" onClick={onRemoveItem}><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></Button>
+        </div>
+        <time className="time-of-creation">{detatchTitleAndTime().time}</time>
+        <Divider />
       </div>
-      <time className="time-of-creation">{detatchTitleAndTime().time}</time>
-      <Divider />
     </li>
   )
 }
