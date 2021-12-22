@@ -1,6 +1,9 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
 
+import { TWForm } from './TailwindComponents/TWForm';
+import { TWButton } from './TailwindComponents/TWButton';
+
 export const ToDoForm = (props) => {
   const { onSubmit, onRemoveCompleted } = props;
 
@@ -31,27 +34,25 @@ export const ToDoForm = (props) => {
   ];
 
   const [form] = Form.useForm();
-  const onFinish = (values) => {
+  const onFinish = (e) => {
     if (onSubmit) {
-      onSubmit({title: values.title, description: values.description});
+      onSubmit({title: e.target.title.value, description: e.target.description.value});
     }
     form.resetFields();
   }
 
   return (
-    <Form className="todo-form" form={form} layout={'column'} onFinish={onFinish}>
-      <Form.Item name="title" className="todo-form-input" rules={titleRules}>
-        <Input placeholder={'Todo title'} />
-      </Form.Item>
-      <Form.Item name="description" className="todo-form-input" rules={descriptionRules}>
-        <Input placeholder={'Todo description'} />
-      </Form.Item>
-      <Form.Item className="todo-form-actions">
-        <div className="actions-container">
-          <Button className="todo-form-action" htmlType="submit" type="primary">Add</Button>
-          <Button className="todo-form-action" htmlType="submit" type="primary" onClick={onRemoveCompleted}>Remove completed</Button>
-        </div>
-      </Form.Item>
-    </Form>
+    <form className="todo-form" form={form} layout={'column'} onSubmit={onFinish}>
+      <div className="mb-6">
+        <input type="text" id="title" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Todo title" required></input>
+      </div>
+      <div className="mb-6">
+        <input type="text" id="description" name="description" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Todo description" required></input>
+      </div>
+      <div className="mb-6 flex justify-between">
+        <TWButton htmlType="submit" type="primary">Add</TWButton>
+        <TWButton htmlType="submit" type="primary" onClick={onRemoveCompleted}>Remove completed</TWButton>
+      </div>
+    </form>
   )
 }

@@ -43,10 +43,10 @@ export const ToDoItem = (props) => {
   }
 
   return (
-    <li className={"todo-item" + item.completed === true ? " completed" : ""} key={item.id}>
+    <li className={"block justify-between items-center" + item.completed === true ? " completed" : ""} key={item.id}>
       <div className={item.completed === true ? "container-completed" : ""}>
-        <h3 className={item.completed === true ? "completed" : ""}>{detatchTitleAndTime().title}</h3>
-        <div className={"todo-item-content"}>
+        <h3 className={(item.completed === true ? "completed" : "") + " m-4 text-gray-800 text-lg"}>{detatchTitleAndTime().title}</h3>
+        <div className="flex justify-between m-4">
           <TWCheckbox className={item.completed ? "completed" : ""}
             checked={item.completed}
             onChange={onCheckItem}

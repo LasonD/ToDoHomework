@@ -23,14 +23,6 @@
   padding: 0;
 }
 
-.todo-item {
-  list-style: none;
-  margin-bottom: 5px;
-  display: block;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .completed {
   text-decoration: line-through;
 }
@@ -61,17 +53,6 @@
 }
 
 .actions-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-h3 {
-  margin-left: 1em;
-}
-
-.todo-item-content {
-  margin-left: 1em;
-  margin-top: 2em;
   display: flex;
   justify-content: space-between;
 }
