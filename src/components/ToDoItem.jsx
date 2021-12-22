@@ -1,9 +1,8 @@
 import React from 'react';
-import { Button, Checkbox, Divider } from 'antd';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import { TWDivider } from './TailwindComponents/TWDivider';
+import { TWDeleteButton } from './TailwindComponents/TWDeleteButton';
+import { TWCheckbox } from './TailwindComponents/TWCheckbox';
 
 export const ToDoItem = (props) => {
   const { item, onCheck, onRemove } = props;
@@ -48,11 +47,11 @@ export const ToDoItem = (props) => {
       <div className={item.completed === true ? "container-completed" : ""}>
         <h3 className={item.completed === true ? "completed" : ""}>{detatchTitleAndTime().title}</h3>
         <div className={"todo-item-content"}>
-          <Checkbox className={item.completed ? "completed" : ""}
+          <TWCheckbox className={item.completed ? "completed" : ""}
             checked={item.completed}
             onChange={onCheckItem}
-          >{item.description}</Checkbox>
-          <Button className="remove-btn" type="danger" onClick={onRemoveItem}><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></Button>
+          >{item.description}</TWCheckbox>
+          <TWDeleteButton onClick={onRemoveItem}></TWDeleteButton>
         </div>
         <time className="time-of-creation">{detatchTitleAndTime().time}</time>
         <TWDivider />
