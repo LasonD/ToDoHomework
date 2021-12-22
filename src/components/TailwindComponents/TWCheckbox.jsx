@@ -1,4 +1,6 @@
 export const TWCheckbox = (props) => {
+
+    
   return (
     <div class="form-check">
       <input
@@ -11,9 +13,11 @@ export const TWCheckbox = (props) => {
       ></input>
       <label
         class="form-check-label inline-block text-gray-800"
-        for="flexCheckDefault"
+        htmlFor="flexCheckDefault"
       >
-          {props.children}
+          <p className={props.checked ? "completed" : ""}>
+            {props.children}
+          </p>
       </label>
     </div>
   );

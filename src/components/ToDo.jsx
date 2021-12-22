@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Divider } from 'antd';
+import { Card } from 'antd';
 import { ToDoItem } from './ToDoItem';
 import { ToDoForm } from './ToDoForm';
 import axios from 'axios';
 import moment from 'moment';
-import { counter } from '@fortawesome/fontawesome-svg-core';
+
+import { TWDivider } from './TailwindComponents/TWDivider';
 
 const token = "3f1b2e94bd0c9e8b754aeefd1200d09583d51951";
 const config = {
@@ -82,7 +83,7 @@ export const ToDo = () => {
   return (
     <Card id="todoCard" title={'My todos'} extra={"Count: " + todos.length} className="todo-card">
       <ToDoForm onSubmit={onSubmit} onRemoveCompleted={onRemoveCompleted} />
-      <Divider />
+      <TWDivider />
       { renderTodoItems(todos) }
     </Card>
   );
