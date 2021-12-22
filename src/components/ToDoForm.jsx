@@ -1,7 +1,5 @@
 import React from 'react';
-import { Form, Input, Button } from 'antd';
 
-import { TWForm } from './TailwindComponents/TWForm';
 import { TWButton } from './TailwindComponents/TWButton';
 
 export const ToDoForm = (props) => {
@@ -33,16 +31,20 @@ export const ToDoForm = (props) => {
     },
   ];
 
-  const [form] = Form.useForm();
   const onFinish = (e) => {
+    const titleInput = e.target.title;
+    const descriptionInput = e.target.description;
+
     if (onSubmit) {
-      onSubmit({title: e.target.title.value, description: e.target.description.value});
+      onSubmit({title: titleInput.value, description: descriptionInput.value});
     }
-    form.resetFields();
+
+    titleInput.value = null;
+    descriptionInput.value = null;
   }
 
   return (
-    <form className="todo-form" form={form} layout={'column'} onSubmit={onFinish}>
+    <form className="todo-form" layout={'column'} onSubmit={onFinish}>
       <div className="mb-6">
         <input type="text" id="title" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Todo title" required></input>
       </div>
