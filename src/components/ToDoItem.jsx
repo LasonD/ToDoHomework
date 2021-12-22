@@ -3,6 +3,8 @@ import { Button, Checkbox, Divider } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
+import { TWDivider } from './TailwindComponents/TWDivider';
+
 export const ToDoItem = (props) => {
   const { item, onCheck, onRemove } = props;
   const onRemoveItem = (e) => {
@@ -53,7 +55,7 @@ export const ToDoItem = (props) => {
           <Button className="remove-btn" type="danger" onClick={onRemoveItem}><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></Button>
         </div>
         <time className="time-of-creation">{detatchTitleAndTime().time}</time>
-        <Divider />
+        <TWDivider />
       </div>
     </li>
   )
