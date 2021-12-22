@@ -6,6 +6,7 @@ import axios from 'axios';
 import moment from 'moment';
 
 import { TWDivider } from './TailwindComponents/TWDivider';
+import { TWCard } from './TailwindComponents/TWCard';
 
 const token = "3f1b2e94bd0c9e8b754aeefd1200d09583d51951";
 const config = {
@@ -81,10 +82,10 @@ export const ToDo = () => {
   }
 
   return (
-    <Card id="todoCard" title={'My todos'} extra={"Count: " + todos.length} className="todo-card">
+    <TWCard id="todoCard" title={'My todos'} extra={"Count: " + todos.length} className="todo-card">
       <ToDoForm onSubmit={onSubmit} onRemoveCompleted={onRemoveCompleted} />
       <TWDivider />
       { renderTodoItems(todos) }
-    </Card>
+    </TWCard>
   );
 }
