@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { Layout, Row, Col } from 'antd';
 
 import { ToDo } from './components/ToDo';
-
-import 'antd/dist/antd.css'
 import './index.css';
 
 const { Header, Footer, Content } = Layout;
@@ -13,14 +11,10 @@ const { Header, Footer, Content } = Layout;
 const App = () => {
   return (
     <Layout>
-      <Header></Header>
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-  Button
-</button>
       <Content>
         <Row>
           <Col span={12} offset={6} className="todo">
-            <ToDo />
+            <ToDo/>
           </Col>
         </Row>
       </Content>

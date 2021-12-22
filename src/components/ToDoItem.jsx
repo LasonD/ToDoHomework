@@ -53,7 +53,7 @@ export const ToDoItem = (props) => {
           >{item.description}</TWCheckbox>
           <TWDeleteButton onClick={onRemoveItem}></TWDeleteButton>
         </div>
-        <time className="time-of-creation">{detatchTitleAndTime().time}</time>
+        <time className="font-mono font-light text-gray-300 float-right">{detatchTitleAndTime().time}</time>
         <TWDivider />
       </div>
     </li>
