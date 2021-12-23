@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ToDoHomework/static/css/main.fce2bbba.chunk.css",
-    "main.js": "/ToDoHomework/static/js/main.d818911a.chunk.js",
-    "main.js.map": "/ToDoHomework/static/js/main.d818911a.chunk.js.map",
+    "main.js": "/ToDoHomework/static/js/main.dd64f904.chunk.js",
+    "main.js.map": "/ToDoHomework/static/js/main.dd64f904.chunk.js.map",
     "runtime-main.js": "/ToDoHomework/static/js/runtime-main.fbbbcb0a.js",
     "runtime-main.js.map": "/ToDoHomework/static/js/runtime-main.fbbbcb0a.js.map",
     "static/css/2.a5e2ee40.chunk.css": "/ToDoHomework/static/css/2.a5e2ee40.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.a5e2ee40.chunk.css",
     "static/js/2.18427f41.chunk.js",
     "static/css/main.fce2bbba.chunk.css",
-    "static/js/main.d818911a.chunk.js"
+    "static/js/main.dd64f904.chunk.js"
   ]
 }
