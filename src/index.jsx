@@ -19,5 +19,4 @@ ReactDOM.render(<App />, document.getElementById('root'), () => {
   root.classList.add('flex');
   root.classList.add('items-center');
   root.classList.add('justify-center');
-  root.classList.add('');
 });

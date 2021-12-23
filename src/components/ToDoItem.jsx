@@ -5,7 +5,8 @@ import { TWDeleteButton } from './TailwindComponents/TWDeleteButton';
 import { TWCheckbox } from './TailwindComponents/TWCheckbox';
 
 export const ToDoItem = (props) => {
-  const { item, onCheck, onRemove } = props;
+  const { item, onCheck, onRemove, onAmend } = props;
+
   const onRemoveItem = (e) => {
     e.preventDefault();
 
@@ -19,6 +20,12 @@ export const ToDoItem = (props) => {
       onCheck(item.id);
     }
   }
+
+  const onAmendItem = () => {
+    if (onAmend) {
+      onAmend(item.id);
+    }
+  };
 
   /* Since there is no data element corresponding the date and time of creation
   in the API's model, the solution is to store it inside the content along with the title and 
@@ -44,7 +51,7 @@ export const ToDoItem = (props) => {
 
   return (
     <li className={"block justify-between items-center" + item.completed === true ? " completed" : ""} key={item.id}>
-      <div className={item.completed === true ? "container-completed" : ""}>
+      <div className={(item.completed === true ? "container-completed" : "")}>
         <h3 className={(item.completed === true ? "completed" : "") + " m-4 text-gray-800 text-lg"}>{detatchTitleAndTime().title}</h3>
         <div className="flex justify-between m-4">
           <TWCheckbox className={item.completed ? "completed" : ""}
@@ -53,7 +60,10 @@ export const ToDoItem = (props) => {
           >{item.description}</TWCheckbox>
           <TWDeleteButton onClick={onRemoveItem}></TWDeleteButton>
         </div>
-        <time className="font-mono font-light text-gray-300 float-right">{detatchTitleAndTime().time}</time>
+        <div className="flex justify-between m-4">
+          <a onClick={onAmendItem} className="font-sans font-normal text-gray-400 float-right">Amend</a>
+          <time className="font-mono font-light text-gray-300 float-right">{detatchTitleAndTime().time}</time>
+        </div>
         <TWDivider />
       </div>
     </li>

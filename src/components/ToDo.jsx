@@ -21,6 +21,9 @@ export const ToDo = () => {
     { id: 2, content: "another one", completed: false },
   ]);
   const [idCount, setIdCount] = useState(10);
+  const amendment = {
+    amendmentItem: null
+  };
 
   useEffect(async () => {
     const result = await axios.get(
@@ -83,6 +86,16 @@ export const ToDo = () => {
     setIdCount(idCount + 1);
   };
 
+  const onAmend = async (id) => {
+    const index = todos.findIndex((todo) => todo.id === id);
+
+    if (index !== -1) {
+      const todo = todos[index];
+
+      amendment.amendmentItem = todo;
+    }
+  };
+
   const renderTodoItems = (todos) => {
     return (
       <ul className="todo-list">
@@ -92,6 +105,7 @@ export const ToDo = () => {
             item={todo}
             onRemove={onRemove}
             onCheck={onCheck}
+            onAmend={onAmend}
           />
         ))}
       </ul>
@@ -100,8 +114,8 @@ export const ToDo = () => {
 
   return (
     <div className="flex items-center justify-center">
-      <TWCard className="" id="todoCard" title={"My todos"} extra={"Count: " + todos.length}>
-        <ToDoForm onSubmit={onSubmit} onRemoveCompleted={onRemoveCompleted} />
+      <TWCard id="todoCard" title={"My todos"} extra={"Count: " + todos.length}>
+        <ToDoForm amendmentItem={amendment.amendmentItem} onSubmit={onSubmit} onRemoveCompleted={onRemoveCompleted} />
         <TWDivider />
         {renderTodoItems(todos)}
       </TWCard>
