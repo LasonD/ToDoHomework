@@ -68,7 +68,7 @@ export const ToDoItem = (props) => {
         </div>
         <div className="flex justify-between m-4">
           <TWAmendPopup item={{id: item.id, title: detatchTitleAndTime().title, description: item.description}} onAmendItem={onAmend}></TWAmendPopup>
-          <time className="font-mono font-light text-gray-300 float-right">
+          <time className="font-mono font-light text-gray-300 mt-auto">
             {detatchTitleAndTime().time}
           </time>
         </div>
