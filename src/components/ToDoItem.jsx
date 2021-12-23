@@ -16,12 +16,6 @@ export const ToDoItem = (props) => {
     }
   };
 
-  const onCheckItem = () => {
-    if (onCheck) {
-      onCheck(item.id);
-    }
-  };
-
   /* Since there is no data element corresponding the date and time of creation
   in the API's model, the solution is to store it inside the content along with the title and 
   then parse appropriately while rendering */
@@ -66,7 +60,7 @@ export const ToDoItem = (props) => {
           <TWCheckbox
             className={item.completed ? "completed" : ""}
             checked={item.completed}
-            onChange={onCheckItem}
+            onChange={onCheck}
           >
             {item.description}
           </TWCheckbox>
