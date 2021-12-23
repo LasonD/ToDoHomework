@@ -10,17 +10,14 @@ const { Header, Footer, Content } = Layout;
 
 const App = () => {
   return (
-    <Layout>
-      <Content>
-        <Row>
-          <Col span={12} offset={6} className="todo">
-            <ToDo/>
-          </Col>
-        </Row>
-      </Content>
-      <Footer></Footer>
-    </Layout>
+    <ToDo/>
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'), () => {
+  const root = document.getElementById('root');
+  root.classList.add('flex');
+  root.classList.add('items-center');
+  root.classList.add('justify-center');
+  root.classList.add('');
+});

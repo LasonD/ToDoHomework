@@ -4,7 +4,6 @@
 @tailwind utilities;
 
 #root {
-  display: flex;
   height: 100%;
 }
 
@@ -12,15 +11,16 @@
   padding: 30px;
 }
 
-.todo-card {
-  min-width: 300px;
-  margin: 0 auto;
-  padding: 2em;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-
 .todo-list {
   padding: 0;
+}
+
+.todo-item {
+  list-style: none;
+  margin-bottom: 5px;
+  display: block;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .completed {
@@ -53,6 +53,17 @@
 }
 
 .actions-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+h3 {
+  margin-left: 1em;
+}
+
+.todo-item-content {
+  margin-left: 1em;
+  margin-top: 2em;
   display: flex;
   justify-content: space-between;
 }

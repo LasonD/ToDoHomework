@@ -99,7 +99,7 @@ export const ToDo = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center justify-center">
       <TWCard className="" id="todoCard" title={"My todos"} extra={"Count: " + todos.length}>
         <ToDoForm onSubmit={onSubmit} onRemoveCompleted={onRemoveCompleted} />
         <TWDivider />

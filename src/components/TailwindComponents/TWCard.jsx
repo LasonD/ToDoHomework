@@ -2,7 +2,7 @@ export const TWCard = (props) => {
   const { title, extra } = props;
 
   return (
-    <div class="p-10 container max-w-2xl">
+    <div class=" p-2">
       <div class="rounded shadow-lg">
         <div class="px-6 py-4">
           <div className="flex justify-between">
